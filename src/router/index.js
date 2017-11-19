@@ -60,6 +60,7 @@ export default new Router({
       name: '首页',
       component: Page404
     },
+/*任务分配一*/
     //转让模块路由
     {
       path: '/transfer',
@@ -100,12 +101,26 @@ export default new Router({
       name: '项目列表',
       component: ProjectList,
     },
+
     {
       path: '/project/:id',	//http://m.d5ct.com/project/408
       name: '项目详情',
       component: ProjectDetails,
     },
+     //分红模块路由  
+    {
+      path: '/bonus',
+      name: '',
+      component: None,
+      children: [
+          { path: 'month', component: Bonus, name: '月份分红列表' },  	//http://m.d5ct.com/bonus/month
+         
+      ]
+    },
+/*任务分配一 end*/
 
+
+/*任务分配二*/
     //账户模块路由  
     {
       path: '/user',
@@ -139,18 +154,8 @@ export default new Router({
       name: '请使用微信打开页面',
       component: Notwx,
     },
-
-    //分红模块路由  
-    {
-      path: '/bonus',
-      name: '',
-      component: None,
-      children: [
-          { path: 'month', component: Bonus, name: '月份分红列表' },  	//http://m.d5ct.com/bonus/month
-         
-      ]
-    },
-
+/*任务分配二 end*/
+   
     //联系我们模块路由  
     {
       path: '/aboutus',
